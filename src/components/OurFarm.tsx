@@ -54,7 +54,7 @@ const OurFarm: React.FC<OurFarmProps> = ({ className }) => {
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-serif font-medium text-amber-700 mb-2">100%</div>
-                <div className="text-sm text-muted-foreground">Organic Certified</div>
+                <div className="text-sm text-muted-foreground">Organic</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-serif font-medium text-amber-700 mb-2">Arabica</div>

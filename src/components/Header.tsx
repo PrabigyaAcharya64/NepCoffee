@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
       const element = document.getElementById(id);
       if (element) {
         window.scrollTo({
-          top: element.offsetTop - 80, // Account for header height
+          top: element.offsetTop - 120, // Increased offset to move content higher
           behavior: 'smooth'
         });
       }
@@ -40,9 +40,11 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled 
-          ? 'py-3 bg-white/90 backdrop-blur-md border-b border-gray-200/20 shadow-sm'
-          : 'py-5 bg-transparent',
+        isMobileMenuOpen 
+          ? 'py-3 bg-white shadow-sm border-b border-gray-200'
+          : isScrolled 
+            ? 'py-3 bg-white/90 backdrop-blur-md border-b border-gray-200/20 shadow-sm'
+            : 'py-5 bg-transparent',
         className
       )}
     >
@@ -62,50 +64,43 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         </div>
         
         <button 
-          className="md:hidden flex items-center"
+          className="md:hidden flex items-center justify-center w-8 h-8 relative z-50"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          <span className={cn(
-            "block w-6 transition-all duration-300",
-            isMobileMenuOpen ? "opacity-0" : "opacity-100"
-          )}>
+          <div className="relative w-6 h-6">
             <span className={cn(
-              "block w-6 h-0.5 mb-1.5",
-              isScrolled ? "bg-gray-900" : "bg-white"
+              "absolute top-0 left-0 w-6 h-0.5 transition-all duration-300 transform",
+              isScrolled ? "bg-gray-900" : "bg-white",
+              isMobileMenuOpen ? "rotate-45 translate-y-2.5" : "translate-y-0"
             )} />
             <span className={cn(
-              "block w-6 h-0.5 mb-1.5",
-              isScrolled ? "bg-gray-900" : "bg-white"
+              "absolute top-2 left-0 w-6 h-0.5 transition-all duration-300",
+              isScrolled ? "bg-gray-900" : "bg-white",
+              isMobileMenuOpen ? "opacity-0" : "opacity-100"
             )} />
             <span className={cn(
-              "block w-4 h-0.5",
-              isScrolled ? "bg-gray-900" : "bg-white"
+              "absolute top-4 left-0 w-6 h-0.5 transition-all duration-300 transform",
+              isScrolled ? "bg-gray-900" : "bg-white",
+              isMobileMenuOpen ? "-rotate-45 -translate-y-2.5" : "translate-y-0"
             )} />
-          </span>
+          </div>
         </button>
       </div>
       
+      {/* Mobile Menu Overlay */}
       <div 
         className={cn(
-          "fixed inset-0 bg-white z-40 flex flex-col pt-24 px-6 transition-transform duration-500 ease-in-out transform md:hidden",
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          "fixed inset-0 bg-white z-40 flex flex-col transition-all duration-500 ease-in-out transform md:hidden",
+          isMobileMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0 pointer-events-none"
         )}
+        style={{ paddingTop: '80px' }}
       >
-        <button 
-          className="absolute top-5 right-5 p-2"
-          onClick={() => setIsMobileMenuOpen(false)}
-          aria-label="Close menu"
-        >
-          <span className="block w-6 h-0.5 bg-foreground transform rotate-45 translate-y-0.5" />
-          <span className="block w-6 h-0.5 bg-foreground transform -rotate-45" />
-        </button>
-        
-        <nav className="flex flex-col space-y-6 text-lg">
+        <nav className="flex flex-col space-y-6 text-lg px-6">
           <NavLink 
             to="/" 
             className={({ isActive }) => cn(
-              "hover:text-amber-700 transition-colors",
+              "hover:text-amber-700 transition-colors text-gray-900",
               isActive && "text-amber-700 font-semibold"
             )}
             onClick={() => setIsMobileMenuOpen(false)}
@@ -113,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             Home
           </NavLink>
           <button 
-            className="text-left hover:text-amber-700 transition-colors"
+            className="text-left hover:text-amber-700 transition-colors text-gray-900"
             onClick={() => {
               scrollToSection('about');
               setIsMobileMenuOpen(false);
@@ -122,7 +117,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             About
           </button>
           <button 
-            className="text-left hover:text-amber-700 transition-colors"
+            className="text-left hover:text-amber-700 transition-colors text-gray-900"
             onClick={() => {
               scrollToSection('our-farm');
               setIsMobileMenuOpen(false);
@@ -131,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             Our Farm
           </button>
           <button 
-            className="text-left hover:text-amber-700 transition-colors"
+            className="text-left hover:text-amber-700 transition-colors text-gray-900"
             onClick={() => {
               scrollToSection('opportunity');
               setIsMobileMenuOpen(false);
@@ -140,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             Why Nepal?
           </button>
           <button 
-            className="text-left hover:text-amber-700 transition-colors"
+            className="text-left hover:text-amber-700 transition-colors text-gray-900"
             onClick={() => {
               scrollToSection('gap');
               setIsMobileMenuOpen(false);
@@ -149,7 +144,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             The Challenge
           </button>
           <button 
-            className="text-left hover:text-amber-700 transition-colors"
+            className="text-left hover:text-amber-700 transition-colors text-gray-900"
             onClick={() => {
               scrollToSection('community');
               setIsMobileMenuOpen(false);
@@ -158,7 +153,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
             Our Promise
           </button>
           <button 
-            className="text-left hover:text-amber-700 transition-colors"
+            className="text-left hover:text-amber-700 transition-colors text-gray-900"
             onClick={() => {
               scrollToSection('subscribe');
               setIsMobileMenuOpen(false);
