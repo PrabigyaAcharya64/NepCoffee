@@ -13,7 +13,7 @@ const Manifesto: React.FC<ManifestoProps> = ({ className }) => {
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <img 
-          src="/lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png" 
+          src="./lovable-uploads/af28398b-9e23-4e2b-9de1-bda457e09fd8.png" 
           alt="Nepal Coffee Background" 
           className="w-full h-full object-cover"
         />

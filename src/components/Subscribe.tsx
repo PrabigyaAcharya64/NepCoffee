@@ -31,7 +31,7 @@ const Subscribe: React.FC<SubscribeProps> = ({ className }) => {
             <div className="relative">
               <div className="w-full h-[500px] overflow-hidden">
                 <img 
-                  src="/lovable-uploads/pic6.jpg" 
+                  src="./lovable-uploads/pic6.jpg" 
                   alt="NepCoffee Subscribe Background" 
                   className="w-full h-full object-cover"
                 />

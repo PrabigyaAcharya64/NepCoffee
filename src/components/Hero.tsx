@@ -11,7 +11,7 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
     <section className={cn('relative h-screen flex items-center overflow-hidden', className)}>
       <div className="absolute inset-0 -z-10">
         <img 
-          src="/lovable-uploads/hero.jpg" 
+          src="./lovable-uploads/hero.jpg" 
           alt="NepCoffee Hero" 
           className="w-full h-full object-cover object-center"
         />

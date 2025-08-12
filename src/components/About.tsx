@@ -31,7 +31,7 @@ const About: React.FC<AboutProps> = ({ className }) => {
           <FadeIn delay={150} className="md:col-span-7">
             <div className="relative h-[500px] lg:h-[600px] w-full rounded-lg overflow-hidden animate-slide-in-right">
               <img 
-                src="/lovable-uploads/pic1.jpg"
+                src="./lovable-uploads/pic1.jpg"
                 alt="NepCoffee Story"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />

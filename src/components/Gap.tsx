@@ -46,7 +46,7 @@ const Gap: React.FC<GapProps> = ({ className }) => {
               <Card className="border-0 shadow-sm h-full overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up">
                 <div className="h-48 overflow-hidden">
                   <img 
-                    src={`/lovable-uploads/${index === 0 ? 'pic3.webp' : index === 1 ? 'pic4.jpg' : 'pic5.jpg'}`}
+                    src={`./lovable-uploads/${index === 0 ? 'pic3.webp' : index === 1 ? 'pic4.jpg' : 'pic5.jpg'}`}
                     alt={stat.title}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                   />

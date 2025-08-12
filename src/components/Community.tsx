@@ -45,7 +45,7 @@ const Community: React.FC<CommunityProps> = ({ className }) => {
               <Card className="border-0 shadow-sm h-full overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up">
                 <div className="h-48 overflow-hidden">
                   <img 
-                    src={`/lovable-uploads/${index === 0 ? 'pic7.jpeg' : index === 1 ? 'pic8.webp' : 'pic9.webp'}`}
+                    src={`./lovable-uploads/${index === 0 ? 'pic7.jpeg' : index === 1 ? 'pic8.webp' : 'pic9.webp'}`}
                     alt={pillar.title}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                   />
