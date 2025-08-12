@@ -124,6 +124,15 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
           <button 
             className="text-left hover:text-amber-700 transition-colors"
             onClick={() => {
+              scrollToSection('our-farm');
+              setIsMobileMenuOpen(false);
+            }}
+          >
+            Our Farm
+          </button>
+          <button 
+            className="text-left hover:text-amber-700 transition-colors"
+            onClick={() => {
               scrollToSection('opportunity');
               setIsMobileMenuOpen(false);
             }}
@@ -187,6 +196,15 @@ const NavLinks: React.FC<NavLinksProps> = ({ scrollToSection, isScrolled }) => (
       onClick={() => scrollToSection('about')}
     >
       About
+    </button>
+    <button 
+      className={cn(
+        "text-sm font-medium hover:text-amber-700 transition-colors",
+        isScrolled ? "text-gray-900" : "text-white"
+      )}
+      onClick={() => scrollToSection('our-farm')}
+    >
+      Our Farm
     </button>
     <button 
       className={cn(

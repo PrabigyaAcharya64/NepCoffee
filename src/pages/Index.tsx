@@ -7,6 +7,7 @@ import Gap from '@/components/Gap';
 import Community from '@/components/Community';
 import Subscribe from '@/components/Subscribe';
 import About from '@/components/About';
+import OurFarm from '@/components/OurFarm';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -46,6 +47,7 @@ const Index = () => {
       <Manifesto />
       <Gap />
       <Community />
+      <OurFarm />
       <Subscribe />
       <Footer />
     </main>

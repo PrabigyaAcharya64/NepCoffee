@@ -32,6 +32,12 @@ const Hero: React.FC<HeroProps> = ({ className }) => {
             </p>
           </FadeIn>
           
+          <FadeIn delay={500}>
+            <p className="text-lg md:text-xl text-white/90 mb-8 animate-fade-in-up">
+              Fresh, authentic, and full of life — just like our land.
+            </p>
+          </FadeIn>
+          
           <FadeIn delay={600}>
             <div className="absolute -bottom-18 left-1/2 transform -translate-x-1/2">
               <div className="flex flex-col items-center space-y-2">
