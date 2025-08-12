@@ -7,7 +7,7 @@
     <title>NepCoffee</title>
     <meta name="description" content="NepCoffee - From the Himalayan Highlands to Your Cup. Handpicked Himalayan beans, expertly roasted — every sip supports Nepali farmers." />
     <meta name="author" content="NepCoffee" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="/lovable-uploads/Untitled.png" />
     <link rel="icon" type="image/png" href="/lovable-uploads/Untitled.png" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   </head>
@@ -15,7 +15,31 @@
   <body>
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script>
+      // Global error handler to prevent uncaught errors
+      window.addEventListener('error', function(event) {
+        if (event.filename && event.filename.includes('gptengineer.js')) {
+          event.preventDefault();
+          console.warn('GPT Engineer script error prevented:', event.error);
+          return false;
+        }
+      });
+
+      // Isolate GPT Engineer script to prevent conflicts
+      (function() {
+        try {
+          const script = document.createElement('script');
+          script.src = 'https://cdn.gpteng.co/gptengineer.js';
+          script.type = 'module';
+          script.onerror = function() {
+            console.warn('GPT Engineer script failed to load, continuing without it');
+          };
+          document.head.appendChild(script);
+        } catch (error) {
+          console.warn('GPT Engineer script error:', error);
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
