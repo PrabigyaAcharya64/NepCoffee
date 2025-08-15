@@ -47,15 +47,12 @@
         "width": 512,
         "height": 512
       },
-      "description": "Premium Himalayan coffee company sourcing handpicked beans from Nepali farmers. From the Himalayan Highlands to Your Cup.",
+      "description": "Showcasing premium Nepali coffee culture and supporting local farmers. From the Himalayan Highlands to Your Cup.",
       "foundingLocation": {
         "@type": "Place",
         "name": "Nepal"
       },
-      "sameAs": [
-        "https://www.instagram.com/coffeeofpromise",
-        "https://www.facebook.com/Coffeeofpromise"
-      ],
+
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
@@ -64,31 +61,22 @@
     }
     </script>
     
-    <!-- Additional Structured Data for Products -->
+    <!-- Website Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Coffee of Promise - Ground Coffee",
-      "description": "Ethically sourced coffee from highly knowledgeable and passionate farmers across Nepal. Medium roast with dynamic taste profile.",
-      "brand": {
-        "@type": "Brand",
-        "name": "NepCoffee"
-      },
-      "manufacturer": {
+      "@type": "WebSite",
+      "name": "NepCoffee",
+      "url": "https://nepcoffee.com",
+      "description": "From the Himalayan Highlands to Your Cup. Showcasing premium Nepali coffee culture and supporting local farmers.",
+      "publisher": {
         "@type": "Organization",
         "name": "NepCoffee"
       },
-      "category": "Coffee",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "NPR",
-        "price": "850.00",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "NepCoffee"
-        }
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://nepcoffee.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
       }
     }
     </script>
